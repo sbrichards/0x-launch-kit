@@ -16,13 +16,15 @@ enum EnvVarType {
     Url,
     WhitelistAllTokens,
 }
+
 // Whitelisted token addresses. Set to a '*' instead of an array to allow all tokens.
-export const WHITELISTED_TOKENS: string[] | '*' = _.isEmpty(process.env.WHITELIST_ALL_TOKENS)
-    ? [
-          '0x2002d3812f58e35f0ea1ffbf80a75a38c32175fa', // ZRX on Kovan
-          '0xd0a1e359811322d97991e03f863a0c30c2cf029c', // WETH on Kovan
-      ]
-    : assertEnvVarType('WHILTELIST_ALL_TOKENS', process.env.WHITELIST_ALL_TOKENS, EnvVarType.WhitelistAllTokens);
+export const WHITELISTED_TOKENS: '*';
+// export const WHITELISTED_TOKENS: string[] | '*' = _.isEmpty(process.env.WHITELIST_ALL_TOKENS)
+//     ? [
+//           '0x2002d3812f58e35f0ea1ffbf80a75a38c32175fa', // ZRX on Kovan
+//           '0xd0a1e359811322d97991e03f863a0c30c2cf029c', // WETH on Kovan
+//       ]
+//     : assertEnvVarType('WHILTELIST_ALL_TOKENS', process.env.WHITELIST_ALL_TOKENS, EnvVarType.WhitelistAllTokens);
 
 // Network port to listen on
 export const HTTP_PORT = _.isEmpty(process.env.HTTP_PORT)
